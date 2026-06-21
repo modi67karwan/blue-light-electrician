@@ -532,6 +532,10 @@
               <label for="message">הודעה</label>
               <textarea id="message" name="message" rows="3" placeholder="תאר בקצרה את העבודה הנדרשת..."></textarea>
             </div>
+            <div class="form-check">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">קראתי ומסכים/ה ל<a href="#" class="open-modal" data-modal="terms">תנאי שימוש</a> ול<a href="#" class="open-modal" data-modal="privacy">מדיניות פרטיות</a> *</label>
+            </div>
             <button type="submit" class="btn btn-primary btn-full btn-lg">
               שלח פרטים →
             </button>
@@ -586,6 +590,13 @@
           </ul>
         </div>
       </div>
+      <div class="footer-legal">
+        <a href="#" class="open-modal" data-modal="privacy">מדיניות פרטיות</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#" class="open-modal" data-modal="terms">תנאי שימוש</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="#" class="open-modal" data-modal="accessibility">הצהרת נגישות</a>
+      </div>
       <div class="footer-bottom">
         <p>© 2024 Blue Light – מוחמד כרואן, חשמלאי ראשי מוסמך | רישיון 1009000 | כל הזכויות שמורות</p>
       </div>
@@ -605,6 +616,25 @@
   <a href="tel:0509028896" class="phone-float" title="התקשר עכשיו">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
   </a>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="alertdialog" aria-live="polite">
+    <div class="cookie-content container">
+      <p>אנו משתמשים בעוגיות לשיפור חוויית הגלישה. <a href="#" class="open-modal" data-modal="privacy">מדיניות פרטיות</a></p>
+      <div class="cookie-btns">
+        <button class="btn-cookie btn-cookie-reject" id="cookieReject">דחה הכל</button>
+        <button class="btn-cookie btn-cookie-accept" id="cookieAccept">קבל הכל</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Modal -->
+  <div class="legal-overlay" id="legalOverlay" role="dialog" aria-modal="true">
+    <div class="legal-modal">
+      <button class="legal-close" id="legalClose" aria-label="סגור">✕</button>
+      <div id="legalContent" class="legal-content"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
