@@ -50,7 +50,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll(
-  '.service-card, .why-card, .testimonial-card, .about-feature, .city-tag, .contact-method'
+  '.service-card, .why-card, .about-feature, .city-tag, .contact-method, .audience-card, .process-step, .gallery-item'
 ).forEach(el => {
   el.classList.add('fade-up');
   observer.observe(el);
