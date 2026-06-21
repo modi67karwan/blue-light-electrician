@@ -68,9 +68,14 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const service = document.getElementById('service').value;
   const city = document.getElementById('city').value.trim();
   const message = document.getElementById('message').value.trim();
-  const text = `שלום מוחמד!%0Aשמי ${name}, מספרי ${phone}.${city ? '%0Aעיר: ' + city : ''}${service ? '%0Aשירות: ' + service : ''}${message ? '%0Aהודעה: ' + message : ''}`;
+  const lines = [`שלום מוחמד! שמי ${name}, מספרי ${phone}.`];
+  if (city) lines.push(`עיר: ${city}`);
+  if (service) lines.push(`סוג עבודה: ${service}`);
+  if (message) lines.push(`פרטים: ${message}`);
+  const text = encodeURIComponent(lines.join('\n'));
   window.open(`https://wa.me/972509028896?text=${text}`, '_blank');
   e.target.reset();
+  window.location.href = 'thank-you.html';
 });
 
 // ─── Cookie Consent ───
@@ -180,6 +185,8 @@ document.addEventListener('click', function (e) {
     openModal(link.dataset.modal);
   }
 });
+
+document.getElementById('accessibilityBtn').addEventListener('click', () => openModal('accessibility'));
 
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
