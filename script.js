@@ -29,7 +29,9 @@ nav.querySelectorAll('.nav-link').forEach(link => {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       const offset = 80;
@@ -57,7 +59,8 @@ document.querySelectorAll(
 });
 
 // Contact form
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+const contactFormEl = document.getElementById('contactForm');
+if (contactFormEl) contactFormEl.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
@@ -81,6 +84,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 // ─── Cookie Consent ───
 (function () {
   const banner = document.getElementById('cookieBanner');
+  if (!banner) return;
   if (!localStorage.getItem('cookieConsent')) banner.classList.add('show');
   document.getElementById('cookieAccept').addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'accepted');
@@ -186,7 +190,80 @@ document.addEventListener('click', function (e) {
   }
 });
 
-document.getElementById('accessibilityBtn').addEventListener('click', () => openModal('accessibility'));
+// ─── Accessibility Widget ───
+(function () {
+  const html = document.documentElement;
+  const trigger = document.getElementById('accTrigger');
+  const panel = document.getElementById('accPanel');
+  if (!trigger || !panel) return;
+
+  const ACC_KEY = 'bluelight_acc';
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(ACC_KEY) || '{}'); } catch (_) {}
+
+  function applyState() {
+    html.classList.remove('acc-text-lg', 'acc-text-xl');
+    if (state.font === 1) html.classList.add('acc-text-lg');
+    else if (state.font === 2) html.classList.add('acc-text-xl');
+    html.classList.toggle('acc-contrast', !!state.contrast);
+    html.classList.toggle('acc-links', !!state.links);
+    html.classList.toggle('acc-no-motion', !!state.motion);
+    const btnContrast = document.getElementById('accContrast');
+    const btnLinks    = document.getElementById('accLinks');
+    const btnMotion   = document.getElementById('accMotion');
+    const btnFontUp   = document.getElementById('accFontUp');
+    if (btnContrast) btnContrast.setAttribute('aria-pressed', String(!!state.contrast));
+    if (btnLinks)    btnLinks.setAttribute('aria-pressed',    String(!!state.links));
+    if (btnMotion)   btnMotion.setAttribute('aria-pressed',   String(!!state.motion));
+    if (btnFontUp)   btnFontUp.classList.toggle('acc-active', (state.font || 0) > 0);
+    try { localStorage.setItem(ACC_KEY, JSON.stringify(state)); } catch (_) {}
+  }
+
+  applyState();
+
+  function closePanel() {
+    panel.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = !panel.hidden;
+    panel.hidden = isOpen;
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#accWidget')) closePanel();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.hidden) { closePanel(); trigger.focus(); }
+  });
+
+  const skipBtn  = panel.querySelector('.acc-skip-btn');
+  const stmtBtn  = panel.querySelector('.acc-statement-btn');
+  if (skipBtn) skipBtn.addEventListener('click', closePanel);
+  if (stmtBtn) stmtBtn.addEventListener('click', closePanel);
+
+  document.getElementById('accFontUp').addEventListener('click', () => {
+    state.font = Math.min((state.font || 0) + 1, 2); applyState();
+  });
+  document.getElementById('accFontDown').addEventListener('click', () => {
+    state.font = Math.max((state.font || 0) - 1, 0); applyState();
+  });
+  document.getElementById('accContrast').addEventListener('click', () => {
+    state.contrast = !state.contrast; applyState();
+  });
+  document.getElementById('accLinks').addEventListener('click', () => {
+    state.links = !state.links; applyState();
+  });
+  document.getElementById('accMotion').addEventListener('click', () => {
+    state.motion = !state.motion; applyState();
+  });
+  document.getElementById('accReset').addEventListener('click', () => {
+    state = {}; applyState();
+  });
+})();
 
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');

@@ -15,6 +15,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+
   <!-- Header -->
   <header class="header" id="header">
     <div class="top-bar">
@@ -40,6 +42,8 @@
       </button>
     </div>
   </header>
+
+  <main id="main-content" tabindex="-1">
 
   <!-- Thank You Hero -->
   <section class="thankyou-hero">
@@ -86,6 +90,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -114,11 +120,44 @@
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
   </a>
 
-  <!-- Accessibility button -->
-  <button class="accessibility-btn" id="accessibilityBtn" aria-label="פתח הצהרת נגישות">
-    <span aria-hidden="true">♿</span>
-    <span class="acc-label">נגישות</span>
-  </button>
+  <!-- Accessibility Widget -->
+  <div class="acc-widget" id="accWidget">
+    <button class="acc-trigger" id="accTrigger" aria-label="כלי נגישות" aria-expanded="false" aria-controls="accPanel">
+      <span aria-hidden="true">♿</span>
+      <span>נגישות</span>
+    </button>
+    <div class="acc-panel" id="accPanel" hidden>
+      <div class="acc-panel-title">כלי נגישות</div>
+      <div class="acc-tools">
+        <button class="acc-tool" id="accFontUp" aria-label="הגדל טקסט">
+          <span class="acc-icon">A+</span>
+          <span class="acc-lbl">הגדל טקסט</span>
+        </button>
+        <button class="acc-tool" id="accFontDown" aria-label="הקטן טקסט">
+          <span class="acc-icon">A−</span>
+          <span class="acc-lbl">הקטן טקסט</span>
+        </button>
+        <button class="acc-tool" id="accContrast" aria-pressed="false" aria-label="ניגודיות גבוהה">
+          <span class="acc-icon">◑</span>
+          <span class="acc-lbl">ניגודיות גבוהה</span>
+        </button>
+        <button class="acc-tool" id="accLinks" aria-pressed="false" aria-label="הדגש קישורים">
+          <span class="acc-icon">🔗</span>
+          <span class="acc-lbl">הדגש קישורים</span>
+        </button>
+        <button class="acc-tool" id="accMotion" aria-pressed="false" aria-label="עצור אנימציות">
+          <span class="acc-icon">⏸</span>
+          <span class="acc-lbl">עצור אנימציות</span>
+        </button>
+        <button class="acc-tool" id="accReset" aria-label="אפס הגדרות נגישות">
+          <span class="acc-icon">↺</span>
+          <span class="acc-lbl">איפוס</span>
+        </button>
+      </div>
+      <a href="#main-content" class="acc-skip-btn">דלג לתוכן הראשי</a>
+      <button class="acc-statement-btn open-modal" data-modal="accessibility">הצהרת נגישות</button>
+    </div>
+  </div>
 
   <!-- Legal Modal -->
   <div class="legal-overlay" id="legalOverlay" role="dialog" aria-modal="true" aria-labelledby="legalContent">
