@@ -215,7 +215,7 @@ document.addEventListener('click', (e) => {
   function apply() {
     html.classList.toggle('acc-contrast', !!state.contrast);
     html.classList.toggle('acc-links', !!state.links);
-    html.classList.toggle('acc-reduce-motion', !!state.motion);
+    html.classList.toggle('acc-no-motion', !!state.motion);
     html.style.setProperty('--acc-font-scale', state.fontScale || 1);
     document.getElementById('accContrast')?.setAttribute('aria-pressed', state.contrast ? 'true' : 'false');
     document.getElementById('accLinks')?.setAttribute('aria-pressed', state.links ? 'true' : 'false');
