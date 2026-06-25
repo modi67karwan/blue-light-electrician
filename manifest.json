@@ -1,0 +1,15 @@
+{
+  "name": "Blue Light – קבלן חשמל",
+  "short_name": "Blue Light",
+  "description": "קבלן חשמל לפרויקטים, שיפוצים, וילות ומשרדים באזור המרכז",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0f2347",
+  "theme_color": "#1a3a6b",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "logo.png", "sizes": "any", "type": "image/png" }
+  ]
+}
