@@ -194,8 +194,26 @@ img { max-width: 100%; }
   transition: all var(--transition);
 }
 .nav-link:hover { color: var(--blue); background: rgba(26,58,107,.06); }
+.nav-link.active { color: var(--blue); background: rgba(26,58,107,.08); font-weight: 700; }
 
 .header-cta { margin-right: 8px; }
+
+/* Phone CTA inside mobile nav */
+.nav-call {
+  display: none;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+  padding: 14px 20px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.nav-call:hover { background: var(--blue-dark); }
 
 /* Hamburger */
 .hamburger {
@@ -681,6 +699,7 @@ img { max-width: 100%; }
   .nav-link { display: block; padding: 14px 16px; font-size: 17px; }
   .hamburger { display: flex; }
   .header-cta { display: none; }
+  .nav-call { display: block; }
 
   .hero { padding: 60px 0 50px; }
   .hero-stats { gap: 20px; }
@@ -1299,3 +1318,6 @@ html.acc-no-motion *::after {
 .error-code { font-size: 96px; font-weight: 900; color: var(--blue); line-height: 1; }
 .error-title { font-size: 28px; font-weight: 800; color: var(--blue-dark); margin: 16px 0 12px; }
 .error-text { font-size: 17px; color: var(--gray); margin-bottom: 32px; }
+
+/* Cookie banner body offset — prevents content hidden behind banner */
+body.cookie-active { padding-bottom: 80px; }
