@@ -2,6 +2,8 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blue Light – מוחמד כרואן, חשמלאי ראשי מוסמך רישיון 1009000. שירותי חשמל מקצועיים באזור תל אביב והמרכז: חיווט, לוחות חשמל, תאורה, מזגנים. זמין 24/7.">
   <meta name="keywords" content="blue light חשמל, חשמלאי, חשמלאי ראשי, חשמלאי תל אביב, חשמלאי מרכז, לוח חשמל, חיווט, תאורה, מזגן, חשמלאי מוסמך, מוחמד כרואן">
@@ -505,11 +507,11 @@
             <h3>השאר פרטים ואחזור אליך</h3>
             <div class="form-group">
               <label for="name">שם מלא *</label>
-              <input type="text" id="name" name="name" placeholder="השם שלך" required>
+              <input type="text" id="name" name="name" placeholder="השם שלך" required autocomplete="name">
             </div>
             <div class="form-group">
               <label for="phone">טלפון *</label>
-              <input type="tel" id="phone" name="phone" placeholder="מספר הטלפון שלך" required>
+              <input type="tel" id="phone" name="phone" placeholder="0501234567" required autocomplete="tel" pattern="[0-9\-\+\s]{7,15}">
             </div>
             <div class="form-group">
               <label for="city">עיר</label>
