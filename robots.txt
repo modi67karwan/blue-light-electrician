@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bluelight-electric.co.il/sitemap.xml
