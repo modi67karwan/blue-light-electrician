@@ -2,6 +2,8 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blue Light – קבלן חשמל לפרויקטים, שיפוצים, וילות ומשרדים באזור המרכז. מוחמד כרואן, חשמלאי ראשי רישיון 1009000. תשתיות, לוחות, תאורה, LED, תקשורת ובדיקות.">
   <meta name="keywords" content="קבלן חשמל, חשמלאי פרויקטים, חשמלאי שיפוצים, חשמלאי ראשי, לוח חשמל, תאורה, פסי LED, תשתיות, תקשורת, תל אביב, מרכז">
@@ -9,46 +11,54 @@
   <meta property="og:title" content="Blue Light – קבלן חשמל לפרויקטים ושיפוצים | תל אביב והמרכז">
   <meta property="og:description" content="תשתיות, לוחות, תאורה ופסי LED לבתים, וילות, עסקים ומשרדים. חשמלאי ראשי מוסמך רישיון 1009000.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bluelight-electric.co.il/">
-  <meta property="og:image" content="https://bluelight-electric.co.il/logo.jpg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Blue Light – קבלן חשמל לפרויקטים ושיפוצים">
-  <meta name="twitter:description" content="תשתיות, לוחות, תאורה ופסי LED לבתים, וילות, עסקים ומשרדים. חשמלאי ראשי מוסמך רישיון 1009000.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://bluelight-electric.co.il/">
-  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <title>Blue Light – חשמלאי ראשי | מוחמד כרואן | תל אביב והמרכז</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Electrician"],
     "name": "Blue Light חשמל",
     "alternateName": "Blue Light Electric",
-    "description": "קבלן חשמל לפרויקטים, שיפוצים, וילות ומשרדים באזור תל אביב והמרכז. חשמלאי ראשי מוסמך רישיון 1009000.",
+    "description": "פתרונות חשמל חכמים – תשתיות, לוחות חשמל, תאורה ופסי LED לבתים, וילות, עסקים ומשרדים. חשמלאי ראשי מוסמך רישיון 1009000.",
+    "url": "https://bluelight-electric.co.il/",
     "telephone": "+972509028896",
-    "url": "https://bluelight-electric.co.il",
-    "image": "https://bluelight-electric.co.il/logo.jpg",
+    "email": "mkproelect@gmail.com",
+    "image": "https://bluelight-electric.co.il/logo.png",
+    "logo": "https://bluelight-electric.co.il/logo.png",
     "priceRange": "$$",
-    "areaServed": "תל אביב והמרכז",
+    "currenciesAccepted": "ILS",
+    "paymentAccepted": "Cash, Bank Transfer",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.0853,
+        "longitude": 34.7818
+      },
+      "geoRadius": "50000"
+    },
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IL",
-      "addressRegion": "המרכז"
+      "addressRegion": "מרכז"
     },
-    "openingHoursSpecification": [{
+    "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "07:00",
-      "closes": "19:00"
-    }],
-    "founder": { "@type": "Person", "name": "מוחמד כרואן" },
-    "vatID": "318226024"
+      "closes": "20:00"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "רישיון חשמלאי ראשי 1009000"
+    }
   }
   </script>
-  <title>Blue Light – קבלן חשמל לפרויקטים ושיפוצים | מוחמד כרואן | תל אביב והמרכז</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -70,7 +80,7 @@
     <div class="container">
       <div class="header-inner">
         <div class="logo">
-          <img src="logo.jpg" alt="Blue Light חשמל" class="logo-img">
+          <img src="logo.png" alt="Blue Light חשמל" class="logo-img">
           <div class="logo-text">
             <span class="logo-name">Blue Light</span>
             <span class="logo-sub">קבלן חשמל ראשי מוסמך</span>
@@ -163,14 +173,140 @@
 
   <section class="gallery" id="gallery"><div class="container"><div class="section-header"><div class="section-badge">גלריה</div><h2 class="section-title">גלריית עבודות</h2><p class="section-subtitle">תמונות מפרויקטים אמיתיים יתווספו בקרוב</p></div><div class="gallery-grid"><div class="gallery-item"><div class="gallery-placeholder">⚡</div><h3>לוחות חשמל</h3><p>תמונות פרויקט יעלו בקרוב</p></div><div class="gallery-item"><div class="gallery-placeholder">🔧</div><h3>שלב שחור / תשתיות</h3><p>תמונות פרויקט יעלו בקרוב</p></div><div class="gallery-item"><div class="gallery-placeholder">💡</div><h3>תאורה וגופי תאורה</h3><p>תמונות פרויקט יעלו בקרוב</p></div><div class="gallery-item"><div class="gallery-placeholder">✨</div><h3>פסי LED</h3><p>תמונות פרויקט יעלו בקרוב</p></div><div class="gallery-item"><div class="gallery-placeholder">📡</div><h3>תקשורת ומצלמות</h3><p>תמונות פרויקט יעלו בקרוב</p></div><div class="gallery-item"><div class="gallery-placeholder">📸</div><h3>לפני / אחרי</h3><p>תמונות פרויקט יעלו בקרוב</p></div></div></div></section>
 
-  <section class="testimonials" id="testimonials"><div class="container"><div class="section-header"><div class="section-badge">המלצות</div><h2 class="section-title">המלצות מפרויקטים</h2><p class="section-subtitle">נעלה המלצות אמיתיות מלקוחות לאחר אישורם</p></div><div class="coming-soon-card"><div class="soon-icon">💬</div><h3>המלצות אמיתיות יתווספו בקרוב</h3><p class="soon-text">עבדנו על פרויקט יחד? נשמח שתשאיר המלצה!</p><a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20אני%20רוצה%20להשאיר%20המלצה%20על%20עבודה%20של%20Blue%20Light" target="_blank" rel="noopener" class="btn btn-primary">שלח המלצה ב-WhatsApp</a></div></div></section>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-badge">צור קשר</div>
+          <h2 class="section-title">בואו נדבר!</h2>
+          <p class="contact-text">מוכן לשמוע על הצרכים שלך ולתת הצעת מחיר ללא התחייבות.</p>
+          <div class="contact-methods">
+            <a href="tel:0509028896" class="contact-method">
+              <div class="method-icon method-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <div>
+                <div class="method-label">טלפון</div>
+                <div class="method-value">050-9028896</div>
+              </div>
+            </a>
+            <a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20אני%20מעוניין%20בשירותי%20חשמל" target="_blank" rel="noopener" class="contact-method">
+              <div class="method-icon method-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <div class="method-label">WhatsApp</div>
+                <div class="method-value">שלח הודעה עכשיו</div>
+              </div>
+            </a>
+            <div class="contact-method no-link">
+              <div class="method-icon method-loc">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <div class="method-label">אזור שירות</div>
+                <div class="method-value">תל אביב והמרכז</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <h3>השאר פרטים ואחזור אליך</h3>
+            <div class="form-group">
+              <label for="name">שם מלא *</label>
+              <input type="text" id="name" name="name" placeholder="השם שלך" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">טלפון *</label>
+              <input type="tel" id="phone" name="phone" placeholder="0501234567" required autocomplete="tel" pattern="[0-9\-\+\s]{7,15}">
+            </div>
+            <div class="form-group">
+              <label for="city">עיר</label>
+              <input type="text" id="city" name="city" placeholder="העיר שלך">
+            </div>
+            <div class="form-group">
+              <label for="service">סוג שירות</label>
+              <select id="service" name="service">
+                <option value="">בחר שירות...</option>
+                <option value="wiring">חיווט ותשתיות חשמל</option>
+                <option value="panel">לוח חשמל</option>
+                <option value="lighting">תאורה ונקודות חשמל</option>
+                <option value="ac">מזגנים ומכשירי חשמל</option>
+                <option value="repair">תיקון וחירום</option>
+                <option value="inspection">בדיקה ותקינה</option>
+                <option value="other">אחר</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">הודעה</label>
+              <textarea id="message" name="message" rows="3" placeholder="תאר בקצרה את העבודה הנדרשת..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+              שלח פרטים →
+            </button>
+            <p class="form-note">* נחזור אליך תוך שעות ספורות</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="coverage" id="coverage"><div class="container"><div class="coverage-inner"><div class="section-badge">אזורי שירות</div><h2 class="section-title">אזור המרכז — כל הפרויקטים</h2><p class="section-subtitle">תל אביב, יפו, גוש דן, הרצליה, רעננה, רמת גן, גבעתיים, חולון, בת ים, ראשון לציון והסביבה</p><div class="cities-grid"><span class="city-tag">תל אביב</span><span class="city-tag">יפו</span><span class="city-tag">רמת גן</span><span class="city-tag">גבעתיים</span><span class="city-tag">הרצליה</span><span class="city-tag">רעננה</span><span class="city-tag">חולון</span><span class="city-tag">בת ים</span><span class="city-tag">ראשון לציון</span><span class="city-tag">פתח תקווה</span></div></div></div></section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="logo.png" alt="Blue Light חשמל" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">Blue Light</span>
+              <span class="logo-sub">חשמלאי ראשי מוסמך</span>
+            </div>
+          </div>
+          <p class="footer-desc">שירותי חשמל מקצועיים לבית ולעסק. רישיון ממשרד האנרגיה 1009000.</p>
+        </div>
+        <div class="footer-col">
+          <h4>שירותים</h4>
+          <ul>
+            <li>חיווט ותשתיות</li>
+            <li>לוחות חשמל</li>
+            <li>תאורה ונקודות חשמל</li>
+            <li>מזגנים ומכשירים</li>
+            <li>תיקונים וחירום</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>אזורי שירות</h4>
+          <ul>
+            <li>תל אביב</li>
+            <li>רמת גן וגבעתיים</li>
+            <li>פתח תקוה ובני ברק</li>
+            <li>הרצליה ורעננה</li>
+            <li>ראשון לציון וחולון</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>צור קשר</h4>
+          <ul>
+            <li><a href="tel:0509028896">📞 050-9028896</a></li>
+            <li><a href="https://wa.me/972509028896" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+            <li>🕐 ראשון–שישי: 07:00–19:00</li>
+            <li>🕐 שבת: לפי תאום</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Blue Light – מוחמד כרואן, חשמלאי ראשי מוסמך | רישיון 1009000 | כל הזכויות שמורות</p>
+      </div>
+    </div>
+  </footer>
 
   <section class="contact" id="contact"><div class="container"><div class="contact-grid"><div class="contact-info"><div class="section-badge">צור קשר</div><h2 class="section-title">שלח פרטים לקבלת הצעת מחיר</h2><p class="contact-text">שלח תוכנית, תמונות או תיאור קצר של העבודה — ונחזור אליך עם כיוון מקצועי להמשך.</p><div class="contact-methods"><a href="tel:0509028896" class="contact-method" data-event="contact_call"><div class="method-icon method-phone">☎</div><div><div class="method-label">טלפון</div><div class="method-value">050-9028896</div></div></a><a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20ראיתי%20את%20האתר%20של%20Blue%20Light.%20אני%20צריך%20הצעת%20מחיר%20/%20בדיקה%20לעבודת%20חשמל.%20שם:%20%20עיר:%20%20סוג%20עבודה:%20" class="contact-method" target="_blank" rel="noopener" data-event="contact_whatsapp"><div class="method-icon method-wa">💬</div><div><div class="method-label">WhatsApp</div><div class="method-value">שלח תוכנית / תמונות</div></div></a><div class="contact-method no-link"><div class="method-icon method-loc">📍</div><div><div class="method-label">אזור שירות</div><div class="method-value">תל אביב והמרכז</div></div></div></div></div><div class="contact-form-wrap"><form class="contact-form" id="contactForm"><h3>פרטי פנייה</h3><div class="form-row"><div class="form-group"><label for="name">שם מלא *</label><input type="text" id="name" required></div><div class="form-group"><label for="phone">טלפון *</label><input type="tel" id="phone" required></div></div><div class="form-row"><div class="form-group"><label for="city">עיר / אזור</label><input type="text" id="city"></div><div class="form-group"><label for="clientType">סוג לקוח</label><select id="clientType"><option value="">בחר</option><option>לקוח פרטי</option><option>קבלן / יזם</option><option>אדריכל / מעצב פנים</option><option>ועד בית / עסק</option></select></div></div><div class="form-group"><label for="service">סוג עבודה</label><select id="service"><option value="">בחר שירות</option><option>פרויקט חשמל / שיפוץ מלא</option><option>לוח חשמל / הגדלת חיבור</option><option>תאורה / פסי LED</option><option>תקשורת / מצלמות / בית חכם</option><option>בדיקה / איתור תקלה</option><option>אחר</option></select></div><div class="form-group"><label for="hasPlans">האם יש תוכנית / תמונות?</label><select id="hasPlans"><option value="">בחר</option><option>יש תוכנית חשמל</option><option>יש תמונות</option><option>אין עדיין</option></select></div><div class="form-group"><label for="message">תיאור קצר</label><textarea id="message" rows="4" placeholder="כתוב בקצרה מה צריך לבצע..."></textarea></div><label class="consent-check"><input type="checkbox" required><span>אני מאשר/ת שימוש בפרטים לצורך יצירת קשר בלבד. קראתי את <a href="#" class="open-modal" data-modal="privacy">מדיניות הפרטיות</a>.</span></label><p class="form-note">שליחת פרטים אינה מהווה הצעת מחיר מחייבת. הצעה סופית תינתן לאחר בדיקת פרטי העבודה, מצב האתר, תוכניות, נגישות וחוסרים אפשריים.</p><button type="submit" class="btn btn-primary btn-full" data-event="form_submit">שלח ל-WhatsApp</button></form></div></div></div></section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo"><img src="logo.jpg" alt="Blue Light חשמל" class="logo-img"><div class="logo-text"><span class="logo-name">Blue Light</span><span class="logo-sub">קבלן חשמל ראשי מוסמך</span></div></div><p class="footer-desc">קבלן חשמל לפרויקטים, שיפוצים, וילות ומשרדים.<br>רישיון ממשרד האנרגיה 1009000 | ע.מ 318226024</p></div><div class="footer-col"><h4>תחומי ביצוע</h4><ul><li><a href="#services">תשתיות חשמל</a></li><li><a href="#services">לוחות חשמל</a></li><li><a href="#services">תאורה ופסי LED</a></li><li><a href="#services">תקשורת ומצלמות</a></li></ul></div><div class="footer-col"><h4>מידע מקצועי</h4><ul><li><a href="faq.html">שאלות נפוצות</a></li><li><a href="work-terms.html">תנאי ביצוע עבודות</a></li><li><a href="#process">איך מתנהל פרויקט</a></li><li><a href="#gallery">גלריית עבודות</a></li></ul></div><div class="footer-col"><h4>צור קשר</h4><ul><li><a href="tel:0509028896">📞 050-9028896</a></li><li><a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20ראיתי%20את%20האתר%20של%20Blue%20Light.%20אני%20צריך%20הצעת%20מחיר%20/%20בדיקה%20לעבודת%20חשמל.%20שם:%20%20עיר:%20%20סוג%20עבודה:%20" target="_blank" rel="noopener">💬 WhatsApp</a></li><li>🕐 ראשון–שישי: 07:00–19:00</li></ul></div></div><div class="footer-legal"><a href="#" class="open-modal" data-modal="privacy">מדיניות פרטיות</a><span class="footer-legal-sep">·</span><a href="#" class="open-modal" data-modal="terms">תנאי שימוש</a><span class="footer-legal-sep">·</span><a href="#" class="open-modal" data-modal="accessibility">הצהרת נגישות</a><span class="footer-legal-sep">·</span><a href="work-terms.html">תנאי ביצוע עבודות</a><span class="footer-legal-sep">·</span><a href="faq.html">שאלות נפוצות</a></div><div class="footer-bottom"><p>© 2026 Blue Light – מוחמד כרואן, קבלן חשמל ראשי מוסמך | רישיון 1009000 | ע.מ 318226024 | כל הזכויות שמורות</p></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo"><img src="logo.png" alt="Blue Light חשמל" class="logo-img"><div class="logo-text"><span class="logo-name">Blue Light</span><span class="logo-sub">קבלן חשמל ראשי מוסמך</span></div></div><p class="footer-desc">קבלן חשמל לפרויקטים, שיפוצים, וילות ומשרדים.<br>רישיון ממשרד האנרגיה 1009000 | ע.מ 318226024</p></div><div class="footer-col"><h4>תחומי ביצוע</h4><ul><li><a href="#services">תשתיות חשמל</a></li><li><a href="#services">לוחות חשמל</a></li><li><a href="#services">תאורה ופסי LED</a></li><li><a href="#services">תקשורת ומצלמות</a></li></ul></div><div class="footer-col"><h4>מידע מקצועי</h4><ul><li><a href="faq.html">שאלות נפוצות</a></li><li><a href="work-terms.html">תנאי ביצוע עבודות</a></li><li><a href="#process">איך מתנהל פרויקט</a></li><li><a href="#gallery">גלריית עבודות</a></li></ul></div><div class="footer-col"><h4>צור קשר</h4><ul><li><a href="tel:0509028896">📞 050-9028896</a></li><li><a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20ראיתי%20את%20האתר%20של%20Blue%20Light.%20אני%20צריך%20הצעת%20מחיר%20/%20בדיקה%20לעבודת%20חשמל.%20שם:%20%20עיר:%20%20סוג%20עבודה:%20" target="_blank" rel="noopener">💬 WhatsApp</a></li><li>🕐 ראשון–שישי: 07:00–19:00</li></ul></div></div><div class="footer-legal"><a href="#" class="open-modal" data-modal="privacy">מדיניות פרטיות</a><span class="footer-legal-sep">·</span><a href="#" class="open-modal" data-modal="terms">תנאי שימוש</a><span class="footer-legal-sep">·</span><a href="#" class="open-modal" data-modal="accessibility">הצהרת נגישות</a><span class="footer-legal-sep">·</span><a href="work-terms.html">תנאי ביצוע עבודות</a><span class="footer-legal-sep">·</span><a href="faq.html">שאלות נפוצות</a></div><div class="footer-bottom"><p>© 2026 Blue Light – מוחמד כרואן, קבלן חשמל ראשי מוסמך | רישיון 1009000 | ע.מ 318226024 | כל הזכויות שמורות</p></div></div></footer>
 
   <a href="https://wa.me/972509028896?text=שלום%20מוחמד,%20ראיתי%20את%20האתר%20של%20Blue%20Light.%20אני%20צריך%20הצעת%20מחיר%20/%20בדיקה%20לעבודת%20חשמל.%20שם:%20%20עיר:%20%20סוג%20עבודה:%20" target="_blank" rel="noopener" class="whatsapp-float" data-event="floating_whatsapp" title="שלח הודעה ב-WhatsApp">💬<span>WhatsApp</span></a>
   <a href="tel:0509028896" class="phone-float" data-event="floating_call" title="התקשר עכשיו">☎</a>
