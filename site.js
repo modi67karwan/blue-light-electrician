@@ -23,7 +23,7 @@ if (menuButton && nav) {
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 function composeProjectMessage(values) {
-  return ['שלום מוחמד, אשמח לקבל הצעת מחיר לעבודת חשמל.', '', 'שם: ' + values.name.trim(), 'מיקום: ' + values.city.trim(), 'סוג העבודה: ' + values.projectType, values.description.trim() ? 'פרטי העבודה: ' + values.description.trim() : ''].filter(Boolean).join('\n');
+  return ['שלום מוחמד, אשמח לקבל הצעת מחיר לעבודת חשמל.', '', 'שם: ' + values.name.trim(), 'מיקום: ' + values.city.trim(), 'סוג העבודה: ' + values.projectType, values.role ? 'תפקיד: ' + values.role : '', (values.area || '').trim() ? 'שטח משוער (מ״ר): ' + values.area.trim() : '', values.plans ? 'תוכניות: ' + values.plans : '', (values.description || '').trim() ? 'פרטי העבודה: ' + values.description.trim() : ''].filter(Boolean).join('\n');
 }
 function projectWhatsAppUrl(values) {
   return 'https://wa.me/972509028896?text=' + encodeURIComponent(composeProjectMessage(values));
@@ -86,21 +86,26 @@ if (form) {
   if (modelContext && typeof modelContext.registerTool === 'function') {
     const lifecycle = new AbortController();
     const projectTypes = Array.from(form.elements.projectType.options).map(option => option.value).filter(Boolean);
+    const roles = Array.from(form.elements.role.options).map(option => option.value).filter(Boolean);
+    const planStates = Array.from(form.elements.plans.options).map(option => option.value).filter(Boolean);
     try {
       Promise.resolve(modelContext.registerTool({
         name: 'stage_project_inquiry',title: 'הכנת פנייה על עבודת חשמל',
         description: 'Fill the visible inquiry form and prepare a WhatsApp message. Does not open WhatsApp or send a message. The visitor sends it separately after reading the visible privacy notice.',
-        inputSchema: {type: 'object', properties: {name: {type: 'string', minLength: 1, maxLength: 80}, city: {type: 'string', minLength: 1, maxLength: 100}, projectType: {type: 'string', enum: projectTypes}, description: {type: 'string', maxLength: 1500}}, required: ['name', 'city', 'projectType'], additionalProperties: false},
+        inputSchema: {type: 'object', properties: {name: {type: 'string', minLength: 1, maxLength: 80}, city: {type: 'string', minLength: 1, maxLength: 100}, projectType: {type: 'string', enum: projectTypes}, role: {type: 'string', enum: roles}, area: {type: 'string', maxLength: 20}, plans: {type: 'string', enum: planStates}, description: {type: 'string', maxLength: 1500}}, required: ['name', 'city', 'projectType'], additionalProperties: false},
         annotations: {readOnlyHint: false, untrustedContentHint: false},
         execute(input) {
           if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Invalid inquiry.');
-          if (Object.keys(input).some(key => !['name', 'city', 'projectType', 'description'].includes(key))) throw new Error('Unknown inquiry field.');
+          if (Object.keys(input).some(key => !['name', 'city', 'projectType', 'role', 'area', 'plans', 'description'].includes(key))) throw new Error('Unknown inquiry field.');
           for (const [key, max] of [['name', 80], ['city', 100]]) if (typeof input[key] !== 'string' || !input[key].trim() || input[key].length > max) throw new Error('Invalid ' + key + '.');
           if (!projectTypes.includes(input.projectType)) throw new Error('Invalid project type.');
           if (input.description !== undefined && (typeof input.description !== 'string' || input.description.length > 1500)) throw new Error('Invalid description.');
-          const values = {...input, description: input.description || ''};
+          if (input.role !== undefined && !roles.includes(input.role)) throw new Error('Invalid role.');
+          if (input.plans !== undefined && !planStates.includes(input.plans)) throw new Error('Invalid plans.');
+          if (input.area !== undefined && (typeof input.area !== 'string' || input.area.length > 20)) throw new Error('Invalid area.');
+          const values = {...input, role: input.role || '', area: input.area || '', plans: input.plans || '', description: input.description || ''};
           clearErrors();
-          for (const key of ['name', 'city', 'projectType', 'description']) form.elements[key].value = values[key];
+          for (const key of ['name', 'city', 'projectType', 'role', 'area', 'plans', 'description']) form.elements[key].value = values[key];
           const status = document.querySelector('#form-status');
           status.textContent = 'הפרטים מוכנים בטופס. אפשר לקרוא את הודעת הפרטיות ולהמשיך ל־WhatsApp.';status.hidden = false;
           return {status: 'prepared', message: composeProjectMessage(values), whatsappUrl: projectWhatsAppUrl(values), sent: false};
@@ -112,7 +117,7 @@ if (form) {
 }
 
 function composeReviewMessage(values) {
-  return ['שלום מודי, זו חוות הדעת שלי על העבודה של Blue Light:', '',
+  return ['שלום מוחמד, זו חוות הדעת שלי על העבודה של Blue Light:', '',
     'שם להצגה: ' + values.reviewName.trim(),
     'דירוג: ' + values.rating + ' מתוך 5',
     'חוות דעת: ' + values.reviewText.trim(), '',
