@@ -110,3 +110,50 @@ if (form) {
     } catch (_) {}
   }
 }
+
+function composeReviewMessage(values) {
+  return ['שלום מודי, זו חוות הדעת שלי על העבודה של Blue Light:', '',
+    'שם להצגה: ' + values.reviewName.trim(),
+    'דירוג: ' + values.rating + ' מתוך 5',
+    'חוות דעת: ' + values.reviewText.trim(), '',
+    values.publishConsent === 'on' ? 'אני מאשר/ת פרסום באתר של חוות הדעת, הדירוג והשם שציינתי.' : 'משוב פרטי בלבד — איני מאשר/ת פרסום באתר.'
+  ].join('\n');
+}
+const reviewForm = document.querySelector('#review-form');
+if (reviewForm) {
+  const reviewFields = ['review-name', 'review-rating', 'review-text'];
+  const reviewErrors = document.getElementById('review-errors');
+  const reviewStatus = document.getElementById('review-status');
+  function clearReviewErrors() {
+    reviewErrors.hidden = true;reviewErrors.textContent = '';
+    for (const id of reviewFields) {
+      document.getElementById(id).removeAttribute('aria-invalid');
+      const error = document.getElementById(id + '-error');
+      error.hidden = true;error.textContent = '';
+    }
+  }
+  reviewForm.addEventListener('input', () => {clearReviewErrors();reviewStatus.hidden = true;});
+  reviewForm.addEventListener('submit', event => {
+    event.preventDefault();clearReviewErrors();reviewStatus.hidden = true;
+    const values = Object.fromEntries(new FormData(reviewForm));
+    const errors = [];
+    if (!values.reviewName || !values.reviewName.trim() || values.reviewName.length > 80) errors.push(['review-name', 'יש לכתוב שם להצגה, עד 80 תווים.']);
+    if (!['1','2','3','4','5'].includes(values.rating)) errors.push(['review-rating', 'יש לבחור דירוג בין 1 ל־5.']);
+    if (!values.reviewText || values.reviewText.trim().length < 10 || values.reviewText.length > 1200) errors.push(['review-text', 'יש לכתוב חוות דעת באורך 10–1,200 תווים.']);
+    if (errors.length) {
+      for (const [id, message] of errors) {
+        document.getElementById(id).setAttribute('aria-invalid', 'true');
+        const error = document.getElementById(id + '-error');error.textContent = message;error.hidden = false;
+      }
+      reviewErrors.textContent = errors.map(item => item[1]).join(' ');
+      reviewErrors.hidden = false;reviewErrors.focus();return;
+    }
+    const url = 'https://wa.me/972509028896?text=' + encodeURIComponent(composeReviewMessage(values));
+    window.open(url, '_blank', 'noopener,noreferrer');
+    reviewStatus.replaceChildren(document.createTextNode('חוות הדעת מוכנה. אם WhatsApp לא נפתח, '));
+    const retry = document.createElement('a');retry.href = url;retry.target = '_blank';retry.rel = 'noopener noreferrer';
+    retry.textContent = 'פתחו את ההודעה כאן (בלשונית חדשה)';
+    reviewStatus.append(retry, document.createTextNode('. ההודעה תגיע אלינו רק אחרי שליחה ב־WhatsApp.'));
+    reviewStatus.hidden = false;
+  });
+}

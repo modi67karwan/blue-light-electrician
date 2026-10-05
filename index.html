@@ -28,6 +28,7 @@
         <a href="#services">תחומי ביצוע</a>
         <a href="#approach">איך עובדים</a>
         <a href="#about">על העסק</a>
+        <a href="#reviews">חוות דעת</a>
         <a href="#contact">יצירת קשר</a>
       </nav>
       <a class="header-contact" href="tel:+972509028896" dir="ltr">050-9028896</a>
@@ -94,6 +95,24 @@
       <details><summary>באילו אזורים אתם עובדים?</summary><p>עיקר הפעילות בתל אביב–יפו ובגוש דן, וכן באזור השרון. התאמה לפרויקט באזור אחר נבדקת לפי היקף העבודה והזמינות.</p></details>
       <details><summary>איך מטפלים בתוספות ובשינויים במהלך העבודה?</summary><p>מגדירים את השינוי, בודקים את השפעתו על הביצוע ומאשרים תכולה ותמחור לפני שמתקדמים.</p></details>
     </div></div></section>
+
+    <section id="reviews" class="reviews section" aria-labelledby="reviews-title">
+      <div class="container reviews-layout">
+        <div class="reviews-copy"><p class="eyebrow">אחרי העבודה</p><h2 id="reviews-title">איך היה לעבוד איתנו?</h2><p>אם ביצענו אצלכם עבודה, נשמח לשמוע מה היה טוב ומה אפשר לשפר.</p><p class="review-process">חוות הדעת נשלחת למודי ב־WhatsApp. היא לא מתפרסמת אוטומטית באתר.</p></div>
+        <noscript><p class="no-script-note">אפשר לכתוב חוות דעת ב<a href="https://wa.me/972509028896" target="_blank" rel="noopener noreferrer">WhatsApp (ייפתח בלשונית חדשה)</a> או לשלוח ל<a href="mailto:mkproelect@gmail.com" dir="ltr">mkproelect@gmail.com</a>.</p></noscript>
+        <form id="review-form" class="project-form review-form" novalidate aria-describedby="review-privacy">
+          <div class="field"><label for="review-name">שם להצגה <span>(חובה)</span></label><input id="review-name" name="reviewName" required maxlength="80" autocomplete="given-name" placeholder="אפשר לכתוב שם פרטי בלבד" aria-describedby="review-name-error"><span id="review-name-error" class="field-error" hidden></span></div>
+          <fieldset class="review-rating" id="review-rating" aria-describedby="review-rating-error"><legend>הדירוג שלכם <span>(חובה)</span></legend><div class="rating-options"><label class="rating-choice"><input type="radio" name="rating" value="1" required><span aria-hidden="true">1 ★</span><span class="sr-only">1 מתוך 5 — לא מרוצה</span></label><label class="rating-choice"><input type="radio" name="rating" value="2" required><span aria-hidden="true">2 ★</span><span class="sr-only">2 מתוך 5 — טעון שיפור</span></label><label class="rating-choice"><input type="radio" name="rating" value="3" required><span aria-hidden="true">3 ★</span><span class="sr-only">3 מתוך 5 — בסדר</span></label><label class="rating-choice"><input type="radio" name="rating" value="4" required><span aria-hidden="true">4 ★</span><span class="sr-only">4 מתוך 5 — טוב מאוד</span></label><label class="rating-choice"><input type="radio" name="rating" value="5" required><span aria-hidden="true">5 ★</span><span class="sr-only">5 מתוך 5 — מצוין</span></label></div><span id="review-rating-error" class="field-error" hidden></span></fieldset>
+          <div class="field"><label for="review-text">חוות הדעת שלכם <span>(חובה)</span></label><textarea id="review-text" name="reviewText" required minlength="10" maxlength="1200" rows="4" placeholder="איזו עבודה ביצענו ואיך הייתה החוויה?" aria-describedby="review-text-hint review-text-error"></textarea><p id="review-text-hint" class="form-note">10–1,200 תווים. אין לכלול כתובת, פרטים רגישים או מידע אישי של אחרים.</p><span id="review-text-error" class="field-error" hidden></span></div>
+          <label class="review-consent"><input type="checkbox" name="publishConsent"><span>אני מאשר/ת לפרסם באתר את חוות הדעת, הדירוג והשם שבחרתי. <small>לא חובה — אפשר לשלוח משוב פרטי בלבד.</small></span></label>
+          <button type="submit" class="button primary">פתיחת חוות הדעת ב־WhatsApp<span class="sr-only"> (ייפתח בלשונית חדשה)</span></button>
+          <p class="form-note">אפשר לקרוא ולערוך את ההודעה לפני השליחה ב־WhatsApp.</p>
+          <p id="review-privacy" class="privacy-notice">מסירת המידע היא מרצונך. מוחמד כרואן ישתמש בו לטיפול במשוב ולבירור אפשרות הפרסום אם אישרת זאת. פתיחת WhatsApp מעבירה אליו את הטקסט שהזנת. הטופס אינו שומר מידע באתר. אפשר לבקש עיון ותיקון או לפנות בנושא אישור הפרסום ב־050-9028896. <a href="/privacy.html">מדיניות הפרטיות</a>.</p>
+          <div id="review-errors" class="form-errors" role="alert" tabindex="-1" hidden></div>
+          <p id="review-status" class="form-status" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
 
     <section id="contact" class="contact section" aria-labelledby="contact-title"><div class="container contact-layout">
       <div class="contact-copy"><p class="eyebrow">יצירת קשר</p><h2 id="contact-title">יש תוכנית?<br>אפשר להתקדם.</h2><p>שלחו את מיקום הפרויקט ותיאור העבודה.<br>אם יש תוכנית או כתב כמויות, אפשר לצרף אותם ב־WhatsApp.</p><a class="contact-phone" dir="ltr" href="tel:+972509028896">050-9028896</a><a class="contact-email" dir="ltr" href="mailto:mkproelect@gmail.com">mkproelect@gmail.com</a><p class="business-notice">שירות באתר הלקוח · ללא חנות לקבלת קהל</p><p class="hours">ראשון–חמישי · <bdi>07:00–19:00</bdi><br>תל אביב–יפו, גוש דן והשרון</p></div>
